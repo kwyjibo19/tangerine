@@ -3,12 +3,10 @@
   hosts: R1
   gather_facts: false
   connection: local
-
   vars:
     cli:
-      username: david
+      username: admin
       password: cisco
-
   tasks:
     - name: enable ospf
       ios_config:
@@ -16,9 +14,6 @@
         authorize: yes
         parents: router ospf 1
         lines:
-          - network 0.0.0.0 255.255.255.255 area 0
-
+          - network 0.0.0.0 0.0.0.0 area 0
       register: print_output
-
     -  debug: var=print_output
-
