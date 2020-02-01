@@ -1,6 +1,6 @@
 ---
 - name: Manage GNS3 devices
-  hosts: CORE
+  hosts: CORE, R3, R4
   gather_facts: false
   connection: local
   vars:
